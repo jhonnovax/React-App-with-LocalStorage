@@ -10,8 +10,10 @@
 		"build": "webpack"
 	},
 	"dependencies": {
+		"@reduxjs/toolkit": "^1.8.1",
 		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
+		"react-dom": "^18.0.0",
+		"react-redux": "^8.0.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.9",

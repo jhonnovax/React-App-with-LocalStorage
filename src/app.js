@@ -1,5 +1,12 @@
+import React from 'react'
+import { useSelector } from 'react-redux'
+
 export default function App() {
+	const persons = useSelector((state) => state.filteredPersons)
+
 	return (
-		<p>Hola</p>
+		<Provider store={store}>
+			{persons.map(person => person.name)}
+		</Provider>
 	)
 };
