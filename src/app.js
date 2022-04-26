@@ -1,12 +1,13 @@
+import appStyles from './app.css';
 import React from 'react'
 import { useSelector } from 'react-redux'
 
 export default function App() {
-	const persons = useSelector((state) => state.filteredPersons)
+	const persons = useSelector((state) => state.persons.filteredPersons)
 
 	return (
-		<Provider store={store}>
+		<div className={appStyles.app}>
 			{persons.map(person => person.name)}
-		</Provider>
+		</div>
 	)
 };
