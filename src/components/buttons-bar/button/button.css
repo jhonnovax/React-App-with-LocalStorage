@@ -1,0 +1,23 @@
+.btn {
+	--btn-colorbackground: transparent;
+	--btn-color-text: #000;
+
+	background-color: var(--btn-colorbackground);
+	border: 1px solid var(--btn-colorbackground);
+	border-radius: 4px;
+	color: var(--btn-color-text);
+	padding: 10px;
+	min-width: 100px;
+}
+
+.green {
+	--btn-colorbackground: #6ee7b7;
+}
+
+.yellow {
+	--btn-colorbackground: #fde68a;
+}
+
+.red {
+	--btn-colorbackground: #fba5a5;
+}

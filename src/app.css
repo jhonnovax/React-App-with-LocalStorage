@@ -1,7 +1,22 @@
-.app {
+.wrapper {
 	border: 1px solid #ccc;
 	background-color: #fff;
 	padding: 20px;
 	margin: 100px auto;
 	max-width: 600px;
+}
+
+.mainInfo {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+
+:global .listbox,
+:global .form {
+	flex: 1;
+}
+
+:global .listbox {
+	margin-right: 10px;
 }
