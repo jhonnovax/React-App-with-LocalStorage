@@ -8,10 +8,12 @@ import ButtonsBar from './components/buttons-bar/buttons-bar';
 import { getPersons, filterPersons, createPerson, updatePerson, deletePerson } from './store/reducers/persons-reducer';
 
 export default function App() {
-	const persons = useSelector((state) => state.persons.filteredPersons)
-	const [selectedPersonId, setSelectedPersonId] = useState(persons[0])
-	const [personData, setPersonData] = useState({ name: '', surname: '' })
 	const dispatch = useDispatch();
+	const persons = useSelector((state) => state.persons.filteredPersons)
+	const [selectedPersonId, setSelectedPersonId] = useState(null)
+	const [personData, setPersonData] = useState({ name: '', surname: '' })
+	const isValidFormPerson = (personData.name.trim() && personData.surname.trim());
+	const isEditingPerson = selectedPersonId ? true : false;
 
 	const onSelectPerson = personId => {
 		setSelectedPersonId(personId);
@@ -20,17 +22,25 @@ export default function App() {
 
 	const onCreate = () => {
 		dispatch(createPerson(personData));
+		setPersonData({ name: '', surname: '' });
+		dispatch(filterPersons(''));
 	}
 
 	const onUpdate = () => {
 		if (selectedPersonId) {
 			dispatch(updatePerson({ ...personData, id: selectedPersonId }));
+			setPersonData({ name: '', surname: '' });
+			setSelectedPersonId(null);
+			dispatch(filterPersons(''));
 		}
 	}
 
 	const onDelete = () => {
 		if (selectedPersonId) {
 			dispatch(deletePerson(selectedPersonId));
+			setPersonData({ name: '', surname: '' });
+			setSelectedPersonId(null);
+			dispatch(filterPersons(''));
 		}		
 	}
 
@@ -53,9 +63,9 @@ export default function App() {
 			</div>
 
 			<ButtonsBar 
-				disableCreate={!personData.name || !personData.surname}
-				disableUpdate={!selectedPersonId}
-				disableDelete={!selectedPersonId}
+				disableCreate={isEditingPerson || !isValidFormPerson}
+				disableUpdate={!isEditingPerson || !isValidFormPerson}
+				disableDelete={!isEditingPerson}
 				onCreate={onCreate} 
 				onUpdate={onUpdate} 
 				onDelete={onDelete} 
