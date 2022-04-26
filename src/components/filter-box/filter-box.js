@@ -6,13 +6,13 @@ export default function FilterBox(props) {
 	const { onChange } = props;
 
 	const onChangeInput = event => {
-		onChange(even.target.value);
+		onChange(event.target.value);
 	}
 
 	return (
 		<div className={filterBoxStyles.wrapper}>
-			<label for="filter-input" className={filterBoxStyles.label}>Filter prefix:</label>
-			<input type="text" className={filterBoxStyles.input} onChange={onChangeInput} />
+			<label htmlFor="filter-input" className={filterBoxStyles.label}>Filter prefix:</label>
+			<input id="filter-input" type="text" className={filterBoxStyles.input} onChange={onChangeInput} />
 		</div>
 	);
 

@@ -14,32 +14,34 @@ export const counterSlice = createSlice({
 
 	reducers: {
 		getPersons: (state) => {
-		state.persons = localStorage.persons ? JSON.parse(localStorage.persons) : [];
-		state.filteredPersons = localStorage.persons ? JSON.parse(localStorage.persons) : [];
+			state.persons = localStorage.persons ? JSON.parse(localStorage.persons) : [];
+			state.filteredPersons = localStorage.persons ? JSON.parse(localStorage.persons) : [];
 		},
 
 		createPerson: (state, action) => {
-			state.persons = state.concat(action.payload);
+			// Add new person with Id of timestamp to give it a unique identifier
+			const newPerson = { ...action.payload, id: Date.now().toString() };
+			state.persons = state.persons.concat(newPerson);
 			updateLocalStorage(state.persons);
 		},
 
 		updatePerson: (state, action) => {
-			state.persons = state.map(person => {
+			state.persons = state.persons.map(person => {
 				return person.id === action.payload.id ? action.payload : person;
 			});
 			updateLocalStorage(state.persons);
 		},
 
-		deletePerson: (state, personId) => {
-			state.persons = state.filter(person => {
-				return person.id !== personId;
+		deletePerson: (state, action) => {
+			state.persons = state.persons.filter(person => {
+				return person.id !== action.payload;
 			});
 			updateLocalStorage(state.persons);
 		},
 
-		filterPersons: (state, keyword) => {
+		filterPersons: (state, action) => {
 			state.filteredPersons = state.persons.filter(person => {
-				return person.surname.startWith(keyword);
+				return person.surname.startsWith(action.payload);
 			});
 		}
 
