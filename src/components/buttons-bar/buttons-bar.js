@@ -3,13 +3,13 @@ import React from "react";
 import Button from './button/button';
 
 export default function ButtonsBar(props) {
-	const { onCreate, onUpdate, onDelete } = props;
+	const { disableCreate, disableUpdate, disableDelete, onCreate, onUpdate, onDelete } = props;
 
 	return (
 		<div className={ButtonBarStyles.wrapper}>
-			<Button green className="button" text="Create" onClick={onCreate} />
-			<Button yellow className="button" text="Update" onClick={onUpdate} />
-			<Button red className="button" text="Delete" onClick={onDelete} />
+			<Button green className="button" disabled={disableCreate} text="Create" onClick={onCreate} />
+			<Button yellow className="button" disabled={disableUpdate} text="Update" onClick={onUpdate} />
+			<Button red className="button" disabled={disableDelete} text="Delete" onClick={onDelete} />
 		</div>
 	);
 

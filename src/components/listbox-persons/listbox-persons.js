@@ -13,7 +13,7 @@ export default function ListboxPersons(props) {
 		<select 
 			className={`${className} ${listboxStyles.select}`} 
 			name="persons" 
-			size="5" 
+			size="20" 
 			value={value}
 			onChange={onSelecPerson}> 
 			{persons.map(person => <option key={person.id} value={person.id}>{person.name} {person.surname}</option> )} 

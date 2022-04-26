@@ -53,6 +53,9 @@ export default function App() {
 			</div>
 
 			<ButtonsBar 
+				disableCreate={!personData.name || !personData.surname}
+				disableUpdate={!selectedPersonId}
+				disableDelete={!selectedPersonId}
 				onCreate={onCreate} 
 				onUpdate={onUpdate} 
 				onDelete={onDelete} 

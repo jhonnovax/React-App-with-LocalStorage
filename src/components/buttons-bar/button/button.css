@@ -6,8 +6,16 @@
 	border: 1px solid var(--btn-colorbackground);
 	border-radius: 4px;
 	color: var(--btn-color-text);
+	cursor: pointer;
+	font-size: 1.6rem;
 	padding: 10px;
 	min-width: 100px;
+}
+
+.btn:disabled {
+	--btn-colorbackground: #aaa;
+	color: #fff;
+	cursor: default;
 }
 
 .green {
