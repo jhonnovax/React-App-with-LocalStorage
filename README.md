@@ -1,18 +1,15 @@
-# react-redux-sample
-React redux simple example with localstorage
+<h2>About the project</h2>
 
-# Scripts
+<p><b>React Redux LocalStorage</b> is a web app with client store using redux and local storage.<br/>
 
-In the project directory, you can run:
+👉 Live Demo: <a href='https://react-redux-local-storage.vercel-jhonnovax.app' target="_blank">React Redux LocalStorage</a>
 
-### `npm install`
+<h3>Tech Stack:</h3>
 
-Runs this command to install node dependencies of the project.
-
-### `npm run dev`
-
-Runs the app in development mode. Open [http://localhost:8080/](http://localhost:8080/).
-
-### `npm run build`
-
-Generate a bundle with the production version in the directory dist
+<p align="left">
+	<img src="https://github.com/jhonnovax/jhonnovax/blob/main/assets/html-icon.svg" width="36" height="36" alt="HTML5" />
+	<img src="https://github.com/jhonnovax/jhonnovax/blob/main/assets/css-icon.svg" width="36" height="36" alt="CSS3" />
+	<img src="https://github.com/jhonnovax/jhonnovax/blob/main/assets/javascript-icon.svg" width="36" height="36" alt="JavaScript" />
+	<img src="https://github.com/jhonnovax/jhonnovax/blob/main/assets/react-icon.svg" width="36" height="36" alt="React" />
+	<img src="https://github.com/jhonnovax/jhonnovax/blob/main/assets/sass-icon.svg" width="36" height="36" alt="SASS" />
+</p>
