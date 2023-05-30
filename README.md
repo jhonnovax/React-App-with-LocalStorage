@@ -2,7 +2,7 @@
 
 <p><b>React Redux LocalStorage</b> is a web app with client store using redux and local storage.<br/>
 
-👉 Live Demo: <a href='https://react-redux-local-storage-jhonnovax.vercel-jhonnovax.app' target="_blank">React Redux LocalStorage</a>
+👉 Live Demo: <a href='https://react-redux-local-storage-jhonnovax.vercel.app' target="_blank">React Redux LocalStorage</a>
 
 <h3>Tech Stack:</h3>
 
