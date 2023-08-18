@@ -1,8 +1,6 @@
 <h2>About the project</h2>
 
-<p><b>React Redux LocalStorage</b> is a web app with client store using redux and local storage.<br/>
-
-👉 Live Demo: <a href='https://react-redux-local-storage-jhonnovax.vercel.app' target="_blank">React Redux LocalStorage</a>
+<p>Web application with client store using redux and local storage.<br/>
 
 <h3>Tech Stack:</h3>
 
